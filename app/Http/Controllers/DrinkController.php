@@ -24,7 +24,31 @@ class DrinkController extends Controller
     }
 
     public function store(Request $request) {
+
+        /*
+        $newDrink -> new Drink;
+        
+        $newDrink -> name = $request -> get('name');
+        $newDrink -> alchol_content = $request -> get('alchol_content');
+        $newDrink -> price = $request -> get('price');
+
+        $newDrink -> save();
+
+        return redirect() -> route('drinks-index');
+        */
         Drink::create($request -> all());
+        return redirect() -> route('drinks-index');
+    }
+
+    public function edit($id) {
+        $drink = Drink::findOrFail($id);
+        return view('pages.drink-edit', compact('drink'));
+    }
+
+    public function update(Request $request, $id) {
+        $drink = Drink::findOrFail($id);
+        $drink -> update($request -> all());
+
         return redirect() -> route('drinks-index');
     }
 
