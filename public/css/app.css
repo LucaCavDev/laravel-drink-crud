@@ -1,10 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: black;
-  color: lightseagreen;
+  background-color: grey;
+  color: yellow;
+  position: relative;
   font-size: 20px;
+}
+
+body .container {
+  height: 100vh;
+  width: 100vw;
+}
+
+body .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 body a {
   color: lightgreen;
+}
+
+body li {
+  list-style: none;
+}
+
+body #header,
+body #footer {
+  background-color: blue;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+body #footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
