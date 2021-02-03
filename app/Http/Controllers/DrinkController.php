@@ -25,9 +25,9 @@ class DrinkController extends Controller
 
     public function store(Request $request) {
 
-        /*
-        $newDrink -> new Drink;
         
+        $newDrink = new Drink;
+
         $newDrink -> name = $request -> get('name');
         $newDrink -> alchol_content = $request -> get('alchol_content');
         $newDrink -> price = $request -> get('price');
@@ -35,9 +35,11 @@ class DrinkController extends Controller
         $newDrink -> save();
 
         return redirect() -> route('drinks-index');
-        */
-        Drink::create($request -> all());
-        return redirect() -> route('drinks-index');
+        
+        //Drink::create($request -> all());
+        //return redirect() -> route('drinks-index');
+        //oppure
+        //return redirect() -> route('drink-show', $drink -> id);
     }
 
     public function edit($id) {
